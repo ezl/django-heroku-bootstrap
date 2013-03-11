@@ -23,6 +23,7 @@ git remote -v
 You are most likely to see 2 distinct remotes at this point. Origin is pointing to DHB's Github and heroku pointing to the git repository for your Heroku application. Keep heroku and feel free to do whatever with the origin (remove or rename if you want to keep the upstream reference). Just saying.   
 * Being a smart developer you are using a virtual environment for your project. Create one. Activate it.
 * Run pip install -r requirements.txt. Grab a cup of tea/coffee. Come back to find all packages successfully installed.
+    * You'll need to have libevent installed on your machine for pip to be able to install gevent successfully (apt-get install libevent-dev)
 ```
 pip install -r requirements.txt
 ```
