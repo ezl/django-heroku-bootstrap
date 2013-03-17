@@ -1,23 +1,7 @@
+{% extends "base.html" %}
 {% load staticfiles %}
-<!DOCTYPE html>
-<!--[if IE 8]>        <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head>
-    <meta charset="utf-8" />
 
-    <!-- Set the viewport width to device width for mobile -->
-    <meta name="viewport" content="width=device-width" />
-
-    <title>Title</title>
-
-    <link rel="stylesheet" href="{% static "stylesheets/normalize.css" %}" />
-    <link rel="stylesheet" href="{% static "stylesheets/foundation.css" %}" />
-    <link rel="stylesheet" href="{% static "stylesheets/custom.css" %}" />
-
-    <script src="{% static "scripts/vendor/custom.modernizr.js" %}"></script>
-</head>
-
-<body>
+{% block content %}
 <div class="row">
     <div class="large-12 columns">
     <!-- Navigation -->
@@ -195,63 +179,15 @@
 
         </div>
     <!-- End Main Content Area -->
+{% endblock %}
 
 
-    <!-- Footer -->
-    {% include "_footer.html" %}
-    <!-- End Footer -->
 
-    </div>
-</div>
-
-    <!-- Included JS Files -->
-    <!-- Included JS Files (Uncompressed) -->
-    <script>
-        document.write('<script src=' +
-        ('__proto__' in {} ? '{% static 'scripts/vendor/zepto.js' %}' : '{% static 'scripts/vendor/jquery.js' %}') +
-        '><\/script>')
-    </script>
-
-    <script src="{% static "scripts/foundation.min.js" %}"></script>
-    <script src="{% static "scripts/foundation/foundation.dropdown.js" %}"></script>
-
-    <!--
-    <script src="{% static "scripts/foundation/foundation.js" %}"></script>
-    <script src="{% static "scripts/foundation/foundation.alerts.js" %}"></script>
-    <script src="{% static "scripts/foundation/foundation.clearing.js" %}"></script>
-    <script src="{% static "scripts/foundation/foundation.placeholder.js" %}"></script>
-    <script src="{% static "scripts/foundation/foundation.forms.js" %}"></script>
-    <script src="{% static "scripts/foundation/foundation.cookie.js" %}"></script>
-    <script src="{% static "scripts/foundation/foundation.joyride.js" %}"></script>
-    <script src="{% static "scripts/foundation/foundation.magellan.js" %}"></script>
-    <script src="{% static "scripts/foundation/foundation.orbit.js" %}"></script>
-    <script src="{% static "scripts/foundation/foundation.reveal.js" %}"></script>
-    <script src="{% static "scripts/foundation/foundation.section.js" %}"></script>
-    <script src="{% static "scripts/foundation/foundation.tooltips.js" %}"></script>
-    <script src="{% static "scripts/foundation/foundation.topbar.js" %}"></script>
-    -->
-
-    <script>
-        $(document).foundation();
-    </script>
-
-    {% block extracss %}{% endblock %}
-    {% block extrajs %}{% endblock %}
-
-    <!-- Application Javascript, safe to override -->
-
-    <script src="js/foundation/index.js"></script>
-    <script>
-        $(document).foundation().foundation('joyride', 'start');
-    </script>
+{% block extrajs %}
     <script type="text/javascript">
         $(window).load(function() {
             $('#featured').orbit({ fluid: '2x1' });
         });
     </script>
-    <!-- End Footer -->
-
-</body>
-</html>
-
+{% endblock %}
 

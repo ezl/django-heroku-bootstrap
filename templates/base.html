@@ -18,12 +18,10 @@
 </head>
 
 <body>
-    {% include "_header.html" %}
-
     {% include "_messages.html" %}
 
     {% block content %}
-        {% include "foundation/_example_foundation_content.html" %}
+        {% include "foundation_templates/_example_foundation_content.html" %}
     {% endblock %}
 
     {% include "_footer.html" %}
@@ -60,7 +58,7 @@
 
     <script src="{% static "scripts/foundation/index.js" %}"></script>
     <script>
-        $(document).foundation();
+        $(document).foundation().foundation('joyride', 'start');
     </script>
 
     {% block extracss %}{% endblock %}

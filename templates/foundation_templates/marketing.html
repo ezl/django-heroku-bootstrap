@@ -1,139 +1,208 @@
+{% extends "base.html" %}
 {% load staticfiles %}
-<!DOCTYPE html>
-<!--[if IE 8]>        <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head>
-    <meta charset="utf-8" />
 
-    <!-- Set the viewport width to device width for mobile -->
-    <meta name="viewport" content="width=device-width" />
+{% block content %}
 
-    <title>Title</title>
 
-    <link rel="stylesheet" href="{% static "stylesheets/normalize.css" %}" />
-    <link rel="stylesheet" href="{% static "stylesheets/foundation.css" %}" />
-    <link rel="stylesheet" href="{% static "stylesheets/custom.css" %}" />
 
-    <script src="{% static "scripts/vendor/custom.modernizr.js" %}"></script>
 
-</head>
+<!-- Navigation -->
 
-<body>
+  <nav class="top-bar">
+    <ul class="title-area">
+      <!-- Title Area -->
+      <li class="name">
+        <h1>
+          <a href="#">
+            Top Bar Title
+          </a>
+        </h1>
+      </li>
+      <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+    </ul>
+ 
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <li class="divider"></li>
+        <li class="has-dropdown">
+          <a href="#">Main Item 1</a>
+          <ul class="dropdown">
+            <li><label>Section Name</label></li>
+            <li class="has-dropdown">
+              <a href="#" class="">Has Dropdown, Level 1</a>
+              <ul class="dropdown">
+                <li><a href="#">Dropdown Options</a></li>
+                <li><a href="#">Dropdown Options</a></li>
+                <li><a href="#">Level 2</a></li>
+                <li><a href="#">Subdropdown Option</a></li>
+                <li><a href="#">Subdropdown Option</a></li>
+                <li><a href="#">Subdropdown Option</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Dropdown Option</a></li>
+            <li><a href="#">Dropdown Option</a></li>
+            <li class="divider"></li>
+            <li><label>Section Name</label></li>
+            <li><a href="#">Dropdown Option</a></li>
+            <li><a href="#">Dropdown Option</a></li>
+            <li><a href="#">Dropdown Option</a></li>
+            <li class="divider"></li>
+            <li><a href="#">See all &rarr;</a></li>
+          </ul>
+        </li>
+        <li class="divider"></li>
+        <li><a href="#">Main Item 2</a></li>
+        <li class="divider"></li>
+        <li class="has-dropdown">
+          <a href="#">Main Item 3</a>
+          <ul class="dropdown">
+            <li><a href="#">Dropdown Option</a></li>
+            <li><a href="#">Dropdown Option</a></li>
+            <li><a href="#">Dropdown Option</a></li>
+            <li class="divider"></li>
+            <li><a href="#">See all &rarr;</a></li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+  </nav>
+ 
+  <!-- End Top Bar -->
 
-    <div class="row">
-        <div class="large-3 columns">
-            <h1><img src="http://placehold.it/400x100&text=Logo" /></h1>
-        </div>
-        <div class="large-9 columns">
-            <ul class="right button-group">
-            <li><a href="#" class="button">Link 1</a></li>
-            <li><a href="#" class="button">Link 2</a></li>
-            <li><a href="#" class="button">Link 3</a></li>
-            <li><a href="#" class="button">Link 4</a></li>
-            </ul>
-    </div>
-    </div>
+  <div class="row">
+    <div class="large-12 columns">
 
-<!-- End Header and Nav -->
+    <!-- Content Slider -->
 
-<!-- First Band (Slider) -->
+      <div class="row">
+        <div class="large-12 hide-for-small">
 
-    <div class="row">
-        <div class="large-12 columns">
-        <ul data-orbit>
-            <li><img src="http://placehold.it/1000x400&text=[ img 1 ]" /></li>
-            <li><img src="http://placehold.it/1000x400&text=[ img 2 ]" /></li>
-            <li><img src="http://placehold.it/1000x400&text=[ img 3 ]" /></li>
-            <li><img src="http://placehold.it/1000x400&text=[ img 4 ]" /></li>
-        </ul>
-        <!-- <div id="slider">
-
-        </div> -->
-
-        <hr />
-        </div>
-    </div>
-
-<!-- Three-up Content Blocks -->
-
-    <div class="row">
-        <div class="large-4 columns">
-            <img src="http://placehold.it/400x300&text=[img]" />
-            <h4>This is a content section.</h4>
-            <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
-        </div>
-
-        <div class="large-4 columns">
-            <img src="http://placehold.it/400x300&text=[img]" />
-            <h4>This is a content section.</h4>
-            <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
-        </div>
-
-        <div class="large-4 columns">
-            <img src="http://placehold.it/400x300&text=[img]" />
-            <h4>This is a content section.</h4>
-            <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
-        </div>
-
-        </div>
-
-<!-- Call to Action Panel -->
-<div class="row">
-        <div class="large-12 columns">
-
-            <div class="panel">
-                <h4>Get in touch!</h4>
-
-                <div class="row">
-                    <div class="large-9 columns">
-                        <p>We'd love to hear from you, you attractive person you.</p>
-                    </div>
-                    <div class="large-3 columns">
-                        <a href="#" class="radius button right">Contact Us</a>
-                    </div>
-                </div>
+          <div id="featured" data-orbit>
+              <img src="http://placehold.it/1200x500&text=Slide Image 1" alt="slide image">
+              <img src="http://placehold.it/1200x500&text=Slide Image 2" alt="slide image">
+              <img src="http://placehold.it/1200x500&text=Slide Image 3" alt="slide image">
             </div>
 
-        </div>
+      </div>
     </div>
 
-    <!-- Footer -->
-    {% include "_footer.html" %}
-    <!-- End Footer -->
+    <!-- End Content Slider -->
 
-    <!-- Included JS Files -->
-    <!-- Included JS Files (Uncompressed) -->
+    <!-- Mobile Header -->
 
-    <script>
-        document.write('<script src=' +
-        ('__proto__' in {} ? '{% static 'scripts/vendor/zepto.js' %}' : '{% static 'scripts/vendor/jquery.js' %}') +
-        '><\/script>')
-    </script>
+      <div class="row">
+        <div class="large-12 columns show-for-small">
 
-    <script src="{% static "scripts/foundation.min.js" %}"></script>
-    <script src="{% static "scripts/foundation/foundation.dropdown.js" %}"></script>
+          <img src="http://placehold.it/1200x700&text=Mobile Header">
 
-    <!--
-    <script src="{% static "scripts/foundation/foundation.js" %}"></script>
-    <script src="{% static "scripts/foundation/foundation.alerts.js" %}"></script>
-    <script src="{% static "scripts/foundation/foundation.clearing.js" %}"></script>
-    <script src="{% static "scripts/foundation/foundation.placeholder.js" %}"></script>
-    <script src="{% static "scripts/foundation/foundation.forms.js" %}"></script>
-    <script src="{% static "scripts/foundation/foundation.cookie.js" %}"></script>
-    <script src="{% static "scripts/foundation/foundation.joyride.js" %}"></script>
-    <script src="{% static "scripts/foundation/foundation.magellan.js" %}"></script>
-    <script src="{% static "scripts/foundation/foundation.orbit.js" %}"></script>
-    <script src="{% static "scripts/foundation/foundation.reveal.js" %}"></script>
-    <script src="{% static "scripts/foundation/foundation.section.js" %}"></script>
-    <script src="{% static "scripts/foundation/foundation.tooltips.js" %}"></script>
-    <script src="{% static "scripts/foundation/foundation.topbar.js" %}"></script>
-    -->
+        </div>
+      </div><br>
 
-    <!-- Application Javascript, safe to override -->
+    <!-- End Mobile Header -->
 
-    <script src="{% static "scripts/foundation/index.js" %}"></script>
-    <script>
-        $(document).foundation();
-    </script>
-</body>
-</html>
+
+      <div class="row">
+        <div class="large-12 columns">
+          <div class="row">
+            <!-- Shows -->
+            <div class="large-4 small-6 columns">
+
+              <h4>Upcoming Shows</h4><hr>
+
+              <div class="row">
+                <div class="large-1 column">
+                  <img src="http://placehold.it/50x50&amp;text=[img]">
+                </div>
+
+                <div class="large-9 columns">
+                  <h5><a href="#">Venue Name</a></h5>
+                  <h6 class="subheader show-for-small">Doors at 00:00pm</h6>
+                </div>
+              </div><hr>
+
+              <div class="hide-for-small">
+                <div class="row">
+                  <div class="large-1 column">
+                    <img src="http://placehold.it/50x50&amp;text=[img]">
+                  </div>
+
+                  <div class="large-9 columns">
+                    <h5 class="subheader"><a href="#">Venue Name</a></h5>
+                  </div>
+                </div><hr>
+
+                <div class="row">
+                  <div class="large-1 column">
+                    <img src="http://placehold.it/50x50&amp;text=[img]">
+                  </div>
+
+                  <div class="large-9 columns">
+                    <h5 class="subheader"><a href="#">Venue Name</a></h5>
+                  </div>
+                </div><hr>
+
+                <div class="row">
+                  <div class="large-1 column">
+                    <img src="http://placehold.it/50x50&amp;text=[img]">
+                  </div>
+
+                  <div class="large-9 columns">
+                    <h5 class="subheader"><a href="#">Venue Name</a></h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Shows -->
+
+
+            <!-- Image -->
+
+            <div class="large-4 small-6 columns">
+              <img src="http://placehold.it/300x465&amp;text=Image">
+            </div>
+
+            <!-- End Image -->
+
+
+            <!-- Feed -->
+
+            <div class="large-4 small-12 columns">
+
+              <h4>Blog</h4><hr>
+              <div class="panel">
+                <h5><a href="#">Post Title 1</a></h5>
+
+                <h6 class="subheader">
+                  Risus ligula, aliquam nec fermentum vitae, sollicitudin eget urna. Suspendisse ultrices ornare tempor...
+                </h6>
+
+                <h6><a href="#">Read More »</a></h6>
+              </div>
+
+              <div class="panel hide-for-small">
+                <h5><a href="#">Post Title 2 »</a></h5>
+              </div>
+
+              <div class="panel hide-for-small">
+                <h5><a href="#">Post Title 3 »</a></h5>
+              </div>
+
+              <a href="#" class="right">Go To Blog »</a>
+
+            </div>
+
+            <!-- End Feed -->
+
+          </div>
+        </div>
+      </div>
+
+    <!-- End Content -->
+
+
+<!-- end -->
+
+
+{% endblock %}
+
