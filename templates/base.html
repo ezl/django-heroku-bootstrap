@@ -18,11 +18,16 @@
 </head>
 
 <body>
+    {% include "_header.html" %}
     {% include "_messages.html" %}
 
-    {% block content %}
-        {% include "foundation_templates/_example_foundation_content.html" %}
-    {% endblock %}
+    <div class="row">
+        <div class="large-12 columns">
+        {% block content %}
+            {% include "foundation_templates/_example_foundation_content.html" %}
+        {% endblock %}
+        </div>
+    </div>
 
     {% include "_footer.html" %}
 
