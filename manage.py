@@ -1,4 +1,9 @@
 #!/usr/bin/env python
+
+# put apps dir in python path
+import sys, os
+sys.path.append(os.path.join(os.path.dirname(__file__), 'apps'))
+
 from django.core.management import execute_manager
 import imp
 try:
