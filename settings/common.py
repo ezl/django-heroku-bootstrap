@@ -104,6 +104,7 @@ INSTALLED_APPS = (
 
     # Project
     'apps.examples',
+    'apps.accounts',
 )
 
 LOGIN_REDIRECT_URL = "/dashboard/"

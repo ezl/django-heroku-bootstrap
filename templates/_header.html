@@ -52,7 +52,7 @@
                 <li class="has-dropdown">
                     <a href="#">Hello, {{ request.user.username|title }}</a>
                     <ul class="dropdown">
-                        <li><a href="#">Settings</a></li>
+                        <li><a href="{% url settings %}">Settings</a></li>
                         <li><a href="{% url logout %}">Log Out</a></li>
                         <li class="divider"></li>
                         <li><a href="#">See all &rarr;</a></li>
