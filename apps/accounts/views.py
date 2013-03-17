@@ -11,6 +11,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 
 from forms import UserProfileForm
+from models import UserProfile
 
 
 def signup(request,
@@ -40,9 +41,10 @@ def login(request):
 def settings(request,
              formclass=UserProfileForm,
              template="accounts/settings.html"):
-    form = formclass()
+    profile, created = UserProfile.objects.get_or_create(user=request.user)
+    form = formclass(instance=profile)
     if request.method == "POST":
-        form = formclass(request.POST)
+        form = formclass(request.POST, request.FILES, instance=profile)
         if form.is_valid():
             profile = form.save(commit=False)
             profile.user = request.user
