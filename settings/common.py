@@ -88,6 +88,10 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.messages.context_processors.messages',
 )
 
+AUTHENTICATION_BACKENDS = (
+    'auth_backends.EmailLoginBackend',
+)
+
 INSTALLED_APPS = (
     # Django
     'django.contrib.auth',

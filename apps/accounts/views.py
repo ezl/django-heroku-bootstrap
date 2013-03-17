@@ -9,10 +9,12 @@ from django.contrib import messages
 from django.contrib.auth.decorators import user_passes_test
 from django.contrib.auth import authenticate, login as auth_login
 from django.contrib.auth.views import login as auth_login_view
-from django.contrib.auth.forms import UserCreationForm
+# from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 
-from forms import UserProfileForm
+from forms import (UserProfileForm,
+                   EmailUserCreationForm as UserCreationForm,
+                   EmailAuthenticationForm)
 from models import UserProfile
 
 
@@ -37,7 +39,10 @@ def signup(request,
 
 def login(request):
     extra_context = []
-    return auth_login_view(request, extra_context=extra_context)
+    return auth_login_view(
+        request,
+        extra_context=extra_context,
+        authentication_form=EmailAuthenticationForm)
 
 @login_required
 def user_settings(request,
