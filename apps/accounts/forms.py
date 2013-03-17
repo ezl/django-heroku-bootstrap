@@ -14,9 +14,9 @@ class EmailAuthenticationForm(AuthAuthenticationForm):
                                 "Note that both fields are case-sensitive.")
             })
 
-    def clean(self):
+    def clean_username(self):
         self.cleaned_data['username'] = self.cleaned_data['username'].lower()
-        return super(EmailAuthenticationForm, self).clean()
+        return super(EmailAuthenticationForm, self).clean_username()
 
 class EmailUserCreationForm(AuthUserCreationForm):
     def __init__(self, *args, **kwargs):
@@ -26,9 +26,9 @@ class EmailUserCreationForm(AuthUserCreationForm):
 
     username = forms.EmailField(label="Email")
 
-    def clean(self):
+    def clean_username(self):
         self.cleaned_data['username'] = self.cleaned_data['username'].lower()
-        return super(EmailUserCreationForm, self).clean()
+        return super(EmailUserCreationForm, self).clean_username()
 
 class UserProfileForm(forms.ModelForm):
     class Meta:

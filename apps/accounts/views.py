@@ -15,10 +15,12 @@ from django.contrib.auth.decorators import login_required
 from models import UserProfile
 from forms import UserProfileForm
 
-from forms import (
-    EmailUserCreationForm as UserCreationForm,
-    EmailAuthenticationForm as AuthenticationForm)
-# from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+if settings.FORCE_EMAIL_USERNAMES:
+    from forms import (
+        EmailUserCreationForm as UserCreationForm,
+        EmailAuthenticationForm as AuthenticationForm)
+else:
+    from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
 
 def signup(request,

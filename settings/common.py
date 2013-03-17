@@ -92,6 +92,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 AUTHENTICATION_BACKENDS = (
     'auth_backends.EmailLoginBackend',
 )
+FORCE_EMAIL_USERNAMES = True
 
 INSTALLED_APPS = (
     # Django
