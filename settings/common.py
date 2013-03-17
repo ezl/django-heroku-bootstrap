@@ -89,6 +89,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 INSTALLED_APPS = (
+    # Django
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -96,10 +97,16 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
+
+    # 3rd Party
     'djcelery',
     'south',
+
+    # Project
     'apps.examples',
 )
+
+LOGIN_REDIRECT_URL = "/dashboard/"
 
 #CELERY SETUP
 
