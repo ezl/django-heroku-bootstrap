@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Your Settings</h1>
+    <h1>{{ firstof request.user.username|title }}'s Settings</h1>
     {% include "components/_basic_form.html" %}
 {% endblock %}
 
