@@ -11,3 +11,7 @@
 .full-width {
     width: 100%;
 }
+
+nav.top-bar {
+    margin-bottom: 1em;
+}
