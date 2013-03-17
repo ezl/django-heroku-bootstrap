@@ -1,0 +1,13 @@
+/* Generic styles */
+
+.strike { text-decoration: line-through; }
+.strong { font-weight: bold; }
+
+.quiet {
+    font-size: 0.8em;
+    line-height: 1.28;
+    color: #444;
+}
+.full-width {
+    width: 100%;
+}
