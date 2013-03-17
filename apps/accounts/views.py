@@ -2,8 +2,10 @@ import os
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.shortcuts import render
 from django.core.urlresolvers import reverse
+from django.conf import settings
 from django.contrib.auth.models import User
 from django.contrib import messages
+
 from django.contrib.auth.decorators import user_passes_test
 from django.contrib.auth import authenticate, login as auth_login
 from django.contrib.auth.views import login as auth_login_view
@@ -27,7 +29,7 @@ def signup(request,
             auth_login(request, user)
             msg = "You have created an account!"
             messages.success(request, msg)
-            # return HttpResponseRedirect("/")
+            return HttpResponseRedirect(settings.LOGIN_REDIRECT_URL)
 
     return render(request, template, {
         'form': form,
@@ -38,9 +40,9 @@ def login(request):
     return auth_login_view(request, extra_context=extra_context)
 
 @login_required
-def settings(request,
+def user_settings(request,
              formclass=UserProfileForm,
-             template="accounts/settings.html"):
+             template="accounts/user_settings.html"):
     profile, created = UserProfile.objects.get_or_create(user=request.user)
     form = formclass(instance=profile)
     if request.method == "POST":
