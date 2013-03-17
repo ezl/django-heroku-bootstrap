@@ -14,17 +14,21 @@ class EmailAuthenticationForm(AuthAuthenticationForm):
                                 "Note that both fields are case-sensitive.")
             })
 
+    def clean(self):
+        self.cleaned_data['username'] = self.cleaned_data['username'].lower()
+        return super(EmailAuthenticationForm, self).clean()
 
 class EmailUserCreationForm(AuthUserCreationForm):
     def __init__(self, *args, **kwargs):
         super(EmailUserCreationForm, self).__init__(*args, **kwargs)
         self.error_messages.update(
             {'duplicate_username': "Looks like you've already signed up before!"})
-        # error_messages = {
-        #     'duplicate_username': _("A user with that username already exists."),
-        #     'password_mismatch': _("The two password fields didn't match."),
-        # }
+
     username = forms.EmailField(label="Email")
+
+    def clean(self):
+        self.cleaned_data['username'] = self.cleaned_data['username'].lower()
+        return super(EmailUserCreationForm, self).clean()
 
 class UserProfileForm(forms.ModelForm):
     class Meta:

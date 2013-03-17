@@ -88,6 +88,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.messages.context_processors.messages',
 )
 
+# I just forced these at the forms level instead... Not happy about it but not fixing for now.
 AUTHENTICATION_BACKENDS = (
     'auth_backends.EmailLoginBackend',
 )
