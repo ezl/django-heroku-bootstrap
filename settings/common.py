@@ -108,6 +108,7 @@ INSTALLED_APPS = (
 )
 
 LOGIN_REDIRECT_URL = "/dashboard/"
+AUTH_PROFILE_MODULE = "accounts.UserProfile"
 
 #CELERY SETUP
 
