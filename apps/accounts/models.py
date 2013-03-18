@@ -6,7 +6,7 @@ from django.contrib.localflavor.us.models import PhoneNumberField, \
                                                  USStateField
 
 
-class UserProfile(models.Model):
+class UserProfile(TimeStampedModel):
     COLOR_CHOICES = (
         ('Red', 'Red'),
         ('Blue', 'Blue'),
