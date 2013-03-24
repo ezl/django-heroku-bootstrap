@@ -1,5 +1,5 @@
 <form method="post">{% csrf_token %}
-    {{ form }}
+    {% include "components/_basic_form_inputs.html" %}
     <input type="submit" class="radius button full-width" />
 </form>
 
