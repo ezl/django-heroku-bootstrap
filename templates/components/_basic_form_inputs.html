@@ -2,7 +2,7 @@
 {% for field in form %}
     <div class="row {% if field.errors %}error{% endif %}">
         <div class="large-12 columns">
-            <span class="label">{{ field.label_tag }}</span>
+            <span class="">{{ field.label_tag }}</span>
             {{ field }}
             {% if field.errors %}
             <small class="">{{ field.errors.0 }}</small>
